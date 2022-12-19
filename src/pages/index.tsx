@@ -1,10 +1,24 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import OddEven from '../components/evenodd'
-import PrimeNumber from '../components/prime'
+import { PrimeNumber, OddEven } from '../pattern/pattern'
+import CheckPrime from '../checker/check'
+import Header from '../components/header'
 
 export default function Home() {
   return (
-    <div><PrimeNumber /></div>
+    <div>
+      <Head>
+        <title>React Numbers Fact</title>
+        <link rel="shortcut icon" href="jugg.ico" type="image/x-icon" />
+      </Head>
+      <Header />
+      <main>
+        <div className='flex p-5'>
+          <div>
+            <PrimeNumber />
+          </div>
+        </div>
+      </main>
+    </div>
   )
 }
