@@ -23,23 +23,25 @@ export function OddEven() {
     }
 
     return (
-        <div>
-            <div>
+        <div className="p-2 inline-block mx-2">
+            <div className="inline-block mx-3 p-2">
+                <div>ODD NUMBER</div>
                 <div>{odd}</div>
-                <button onClick={() => oddClick("-")} className='btn-primary'>
-                    Prev
+                <button onClick={() => oddClick("-")} className='btn-primary rounded px-2 mr-2'>
+                    -
                 </button>
-                <button onClick={() => oddClick("+")} className='btn-primary'>
-                    Next
+                <button onClick={() => oddClick("+")} className='btn-primary rounded px-2'>
+                    +
                 </button>
             </div>
-            <div>
+            <div className="inline-block mx-3 p-2">
+                <div>EVEN NUMBER</div>
                 <div>{even}</div>
-                <button onClick={() => evenClick("-")} className='btn-primary'>
-                    Prev
+                <button onClick={() => evenClick("-")} className='btn-primary rounded px-2 mr-2'>
+                    -
                 </button>
-                <button onClick={() => evenClick("+")} className='btn-primary'>
-                    Next
+                <button onClick={() => evenClick("+")} className='btn-primary rounded px-2'>
+                    +
                 </button>
             </div>
         </div>
@@ -79,9 +81,9 @@ export function PrimeNumber() {
     }
 
     return (
-        <div>
-            <div>{prime}</div>
-            <button onClick={() => nextPrime(prime)} className='btn-primary rounded p-2'>Next</button>
+        <div className="p-2 inline-block mx-2">
+            <div className="text-lg text-center font-bold">{prime}</div>
+            <button onClick={() => nextPrime(prime)} className='btn-primary rounded p-2 mt-4'>Next Prime Number</button>
         </div>
     )
 }

@@ -6,17 +6,19 @@ import Header from '../components/header'
 
 export default function Home() {
   return (
-    <div>
+    <div className='bg-base-200'>
       <Head>
         <title>React Numbers Fact</title>
         <link rel="shortcut icon" href="jugg.ico" type="image/x-icon" />
       </Head>
       <Header />
       <main>
-        <div className='flex p-5'>
-          <div>
-            <PrimeNumber />
-          </div>
+        <div className="text-center">
+          <CheckPrime />
+        </div>
+        <div className='flex justify-center'>
+          <OddEven />
+          <PrimeNumber />
         </div>
       </main>
     </div>

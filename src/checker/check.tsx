@@ -29,11 +29,16 @@ export default function CheckPrime() {
         return setPrime("PRIME")
     }
 
+    function handleClick() {
+        alert("Send me your number NOW 😠😠😠")
+    }
+
     return (
-        <div>
-            <div>
-                <input type="number" name="" id="" onChange={handleChange} />
-                <div>{prime}</div>
+        <div className="inline-block p-2 my-2">
+            <div className="text-center">
+                <div className="font-bold text-lg">Prime Checker</div>
+                <div><input type="number" onChange={handleChange} className="input" /></div>
+                <button className="btn btn-primary mt-2" onClick={handleClick}>{prime}</button>
             </div>
         </div>
     )
