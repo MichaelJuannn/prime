@@ -7,6 +7,7 @@ type Input = {
 
 export default function CheckPrime() {
     const [prime, setPrime] = useState("PRIME")
+    const [openmodal, setModal] = useState("modal-close")
 
 
     function isPrime(number: number) {
@@ -30,7 +31,9 @@ export default function CheckPrime() {
     }
 
     function handleClick() {
-        alert("Send me your number NOW 😠😠😠")
+        if (openmodal == "modal-close")
+            return setModal("modal-open")
+        return setModal("modal-close")
     }
 
     return (
@@ -38,7 +41,16 @@ export default function CheckPrime() {
             <div className="text-center">
                 <div className="font-bold text-lg">Prime Checker</div>
                 <div><input type="number" onChange={handleChange} className="input" /></div>
-                <button className="btn btn-primary mt-2" onClick={handleClick}>{prime}</button>
+                <label htmlFor="prime-modal" className="btn btn-primary mt-2" onClick={handleClick}>{prime}</label>
+            </div>
+            <div className={`modal ${openmodal}`}>
+                <div className="modal-box">
+                    <h3 className="font-bold text-lg">Congratulations Random Internet Your number is {prime}</h3>
+                    <p className="py-4 capitalize">Your number maybe a prime or not but you definitely a 10</p>
+                    <div className="modal-action">
+                        <label htmlFor="prime-modal" className="btn" onClick={handleClick}>Yay!</label>
+                    </div>
+                </div>
             </div>
         </div>
     )
